@@ -11,8 +11,8 @@
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
-	"appid": "touristappid",
-	"projectname": "firstapp",
+	"appid": "wx35f4fc26d3ab5fdc",
+	"projectname": "ch_applet",
 	"libVersion": "2.6.0",
 	"condition": {
 		"search": {
