@@ -1,17 +1,18 @@
 <template>
-  <div @click="clickHandle">
-
-    <div class="userinfo" @click="bindViewTap">
-      <img class="userinfo-avatar" v-if="userInfo.avatarUrl" :src="userInfo.avatarUrl" background-size="cover" />
-      <img class="userinfo-avatar" src="/static/images/user.png" background-size="cover" />
-    </div>
-
-    <div class="usermotto">
-      <div class="user-motto">
-      </div>
-    </div>
-
-    <a href="/pages/counter/main" class="counter">去往Vuex示例页面</a>
+  <div>
+    <!-- 轮播图 -->
+    <swiper class="banner" indicator-dots="true" autoplay="true" interval="5000" circular="true">
+      <swiper-item><img src="/static/images/1.png"/></swiper-item>
+      <swiper-item><img src="/static/images/2.png"/></swiper-item>
+      <swiper-item><img src="/static/images/3.png"/></swiper-item>
+      <swiper-item><img src="/static/images/4.png"/></swiper-item>
+    </swiper>
+    <!-- 导航栏 -->
+    <nav>
+      <ul>
+        <li v-for="item in nav">{{item}}</li>
+      </ul>
+    </nav>
   </div>
 </template>
 
@@ -20,6 +21,7 @@ export default {
   data () {
     return {
       motto: 'Hello miniprograme',
+      nav: ['课程', '资料', '习题'],
       userInfo: {
         nickName: 'mpvue',
         avatarUrl: 'http://mpvue.com/assets/logo.png'
@@ -48,43 +50,27 @@ export default {
 }
 </script>
 
-<style scoped>
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+<style>
+  .banner{
+    width: 100%;
+  }
+  .banner img{
+    width: 100%;
+    height: 100%;
+  }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 150px;
-}
-
-.form-control {
-  display: block;
-  padding: 0 12px;
-  margin-bottom: 5px;
-  border: 1px solid #ccc;
-}
-.all{
-  width:7.5rem;
-  height:1rem;
-  background-color:blue;
-}
-.all:after{
-  display:block;
-  content:'';
-  clear:both;
-}
-
+  /* 导航栏 */
+  nav ul li{
+    width: 140rpx;
+    height: 80rpx;
+    border: 1rpx solid #000;
+    border-radius: 20rpx;
+    text-align: center;
+    line-height: 78rpx;
+    margin: 20rpx;
+  }
+  nav ul{
+    display: flex;
+    justify-content: space-around;
+  }
 </style>
