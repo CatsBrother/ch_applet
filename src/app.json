@@ -1,7 +1,7 @@
 {
   "pages": [
     "pages/index/main",
-    "pages/logs/main",
+    "pages/study/main",
     "pages/counter/main"
   ],
   "window": {
@@ -23,12 +23,12 @@
       "selectedIconPath": "static/tabs/home-active.png"
     }, {
       "text": "学习",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/study/main",
       "iconPath": "static/tabs/study.png",
       "selectedIconPath": "static/tabs/study-active.png"
     }, {
       "text": "我的",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/counter/main",
       "iconPath": "static/tabs/user.png",
       "selectedIconPath": "static/tabs/user-active.png"
     }],
@@ -40,12 +40,12 @@
       "activeIcon": "static/tabs/home-active.png"
     }, {
       "name": "学习",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/study/main",
       "icon": "static/tabs/study.png",
       "activeIcon": "static/tabs/study-active.png"
     }, {
       "name": "我的",
-      "pagePath": "pages/logs/main",
+      "pagePath": "pages/counter/main",
       "icon": "static/tabs/orders.png",
       "activeIcon": "static/tabs/user-active.png"
     }],

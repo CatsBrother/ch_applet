@@ -10,7 +10,7 @@
     <!-- 导航栏 -->
     <nav>
       <ul>
-        <li v-for="item in nav">{{item}}</li>
+        <li v-for="item in nav" >{{item}}</li>
       </ul>
     </nav>
   </div>
@@ -20,12 +20,7 @@
 export default {
   data () {
     return {
-      motto: 'Hello miniprograme',
-      nav: ['课程', '资料', '习题'],
-      userInfo: {
-        nickName: 'mpvue',
-        avatarUrl: 'http://mpvue.com/assets/logo.png'
-      }
+      nav: ['课程', '资料', '习题']
     }
   },
 
@@ -51,6 +46,9 @@ export default {
 </script>
 
 <style>
+  html{
+    background-color: #f6f6f6;
+  }
   .banner{
     width: 100%;
   }
