@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="tag">
-      <a href="#">学习笔记</a>
-      <a href="#">课程记录</a>
+      <a href="#" v-bind:class="btn_choose?'bg_black':'bg_white'">学习笔记</a>
+      <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">课程记录</a>
     </div>
     <!-- 学习笔记 -->
     <div v-for="item in note">
@@ -11,6 +11,7 @@
         <p>{{item.content}}</p>
         <div class="footer">
           <span>{{item.lesson}}</span>
+          <span class="one"></span>
           <span>{{item.date}}</span>
         </div>
       </article>
@@ -42,7 +43,9 @@ export default {
           lesson: '摄影测量与遥感',
           date: '2019-02-07'
         }
-      ]
+      ],
+      // 默认选择学习笔记
+      btn_choose: true
     }
   },
 
@@ -53,7 +56,63 @@ export default {
 
 <style lang="less">
   @import "./../../theme.less";
-  div{
+  html{
     background: @bg;
+  }
+  .tag{
+    width: 500rpx;
+    height: 60rpx;
+    display: flex;
+    margin: 30rpx auto;
+    background-color: #fff;
+    border: 1rpx solid @text-dark;
+    border-radius: 10rpx;
+    overflow: hidden;
+  }
+  .tag a{
+    width: 250rpx;
+    display: inline-block;
+    line-height: 58rpx;
+    text-align: center;
+  }
+  .bg_black{
+    background-color: #000;
+    color: #fff;
+  }
+  .bg_white{
+    background-color: #fff;
+    color: #000;
+  }
+
+  .note{
+    width: 710rpx;
+    padding: 20rpx 20rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+  }
+  .note h3{
+    font: 35rpx/50rpx sans-serif;
+    color: @text-dark;
+  }
+  .note p{
+    font: 28rpx/45rpx sans-serif;
+    color: @text-middle;
+    padding: 10rpx 0;
+  }
+  .footer{
+    display: flex;
+    justify-content: left;
+    font: 28rpx/40rpx sans-serif;
+    color: @text-light;
+    height: 40rpx;
+  }
+  .footer span{
+    display: inline-block;
+  }
+  .footer .one{
+    width: 1px;
+    height: 40rpx;
+    margin: 0 20rpx;
+    border-right: solid 1px @text-light;
   }
 </style>
