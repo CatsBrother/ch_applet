@@ -45,7 +45,8 @@ export default {
 }
 </script>
 
-<style>
+<style lang="less">
+@import "./../../theme.less";
   html{
     background-color: #f6f6f6;
   }
@@ -59,16 +60,15 @@ export default {
 
   /* 导航栏 */
   nav ul li{
-    width: 140rpx;
+    width: 33.3%;
     height: 80rpx;
-    border: 1rpx solid #000;
-    border-radius: 20rpx;
+    border: 2rpx solid @border;
     text-align: center;
     line-height: 78rpx;
-    margin: 20rpx;
+    color: @text-dark;
+    background-color: #EFF7FF;
   }
   nav ul{
     display: flex;
-    justify-content: space-around;
   }
 </style>

@@ -18,7 +18,7 @@
     </div>
     <!-- 待办清单 -->
     <div v-if="!btn_choose">
-      <p>111111111111111111</p>
+      <input type="text" placeholder="创建任务" class="task">
     </div>
   </div>
 </template>
@@ -118,5 +118,13 @@ export default {
     height: 40rpx;
     margin: 0 20rpx;
     border-right: solid 1px @text-light;
+  }
+
+  .task{
+    width: 600rpx;
+    height: 100rpx;
+    background-color: #fff;
+    border: @border;
+    margin: 0 auto;
   }
 </style>
