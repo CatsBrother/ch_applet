@@ -18,7 +18,10 @@
     </div>
     <!-- 待办清单 -->
     <div v-if="!btn_choose">
-      <input type="text" placeholder="创建任务" class="task">
+      <form class="task">
+        <input type="text" placeholder="创建任务" class="text-task">        
+        <button class="submit-task"></button>
+      </form>
     </div>
   </div>
 </template>
@@ -60,9 +63,18 @@ export default {
 
 <style lang="less">
   @import "./../../theme.less";
+  *{
+    border: none;
+  }
   html{
     background: @bg;
   }
+  button{
+    margin: 0;
+    padding: 0;
+    border: none;  //自定义边框
+    position: absolute;
+}
   .tag{
     width: 500rpx;
     height: 60rpx;
@@ -121,10 +133,37 @@ export default {
   }
 
   .task{
+    width: 750rpx;
+    display: flex;
+    overflow: hidden;
+    position: absolute;
+    left: 25rpx;
+  }
+  .text-task{
+    box-sizing: border-box;
     width: 600rpx;
     height: 100rpx;
     background-color: #fff;
-    border: @border;
-    margin: 0 auto;
+    border-top-left-radius: 10rpx;
+    border-bottom-left-radius: 10rpx;
+    border: 1rpx solid @border;
+    border-right: none;
+    display: inline-block;
+    padding: 0 20rpx;
+  }
+  .task button{
+    border-radius: 0;
+    height: 100rpx;
+    width: 100rpx;
+    border-top-right-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    border:1rpx solid @border;
+    border-left: none;
+    display: inline-block;
+    background:url("../../../static/images/submit.png");
+    background-size:90rpx 90rpx;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-color: #fff;
   }
 </style>

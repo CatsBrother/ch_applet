@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/main",
     "pages/study/main",
-    "pages/counter/main"
+    "pages/personal/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -28,7 +28,7 @@
       "selectedIconPath": "static/tabs/study-active.png"
     }, {
       "text": "我的",
-      "pagePath": "pages/counter/main",
+      "pagePath": "pages/personal/main",
       "iconPath": "static/tabs/user.png",
       "selectedIconPath": "static/tabs/user-active.png"
     }],
@@ -45,7 +45,7 @@
       "activeIcon": "static/tabs/study-active.png"
     }, {
       "name": "我的",
-      "pagePath": "pages/counter/main",
+      "pagePath": "pages/personal/main",
       "icon": "static/tabs/orders.png",
       "activeIcon": "static/tabs/user-active.png"
     }],

@@ -32,12 +32,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": -1,
 					"name": "学习",
-					"pathName": "pages/study/main"
+					"pathName": "pages/study/main",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/personal/main",
+					"scene": null
 				}
 			]
 		}
