@@ -1,12 +1,17 @@
 <template>
   <div>
-    <button open-type="getUserInfo"  @getuserinfo="bindGetUserInfo">获取用户信息</button>
-    <div class="information">
+    <button v-if="!userInfo" open-type="getUserInfo"  @getuserinfo="bindGetUserInfo">获取用户信息</button>
+    <!-- 个人信息 -->
+    <div v-if="userInfo" class="information">
       <img v-bind:src="userInfo.avatarUrl" alt="头像">
       <div class="infor-text">
         <p>昵称：{{userInfo.nickName}}</p>
         <p>学号：{{stu_num}}</p>
       </div>
+    </div>
+    <!-- 签到 -->
+    <div class="sign">
+      <button>签到</button>
     </div>
   </div>
 </template>
@@ -15,15 +20,7 @@
 export default {
   data () {
     return {
-      userInfo: {
-        avatarUrl: 'https://wx.qlogo.cn/mmopen/vi_32/OkDMzloNTP1IRkJoRmKRfq82KHThD9vibJH4XbHzicOpkoX0wtRZyK0bQl7cPRJzvvTCoe5h4tFgIv6GQVahopAg/132',
-        city: 'Nanjing',
-        country: 'China',
-        gender: 2,
-        language: 'zh_CN',
-        nickName: '戳破的芝麻汤圆',
-        province: 'Jiangsu'
-      },
+      userInfo: '',
       stu_num: 'B15090704'
     }
   },
@@ -31,6 +28,7 @@ export default {
   methods: {
     bindGetUserInfo (e) {
       console.log(e.mp.detail.userInfo)
+      this.userInfo = e.mp.detail.userInfo
     }
   },
 
@@ -43,12 +41,15 @@ export default {
 <style lang="less">
 @import "./../../theme.less";
 .information{
-  padding: 10rpx;
+  margin: 10rpx;
   display: flex;
+  border: solid 2rpx @border;
+  border-radius: 20rpx;
+  background-color: @bg-blue;
 }
 .information p{
   color: @text-dark;
-  font: 24rpx/60rpx Sans-serif;
+  font: 30rpx/80rpx Sans-serif;
 }
 .information img{
   width: 200rpx;
@@ -59,6 +60,6 @@ export default {
   display: inline-block;
 }
 .information .infor-text{
-  padding: 50rpx;
+  padding: 40rpx;
 }
 </style>
