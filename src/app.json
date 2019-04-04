@@ -2,13 +2,19 @@
   "pages": [
     "pages/index/main",
     "pages/study/main",
-    "pages/personal/main"
+    "pages/personal/main",
+    "pages/index/article/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "摄影测量教学助手",
     "navigationBarTextStyle": "black"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于签到"
+    }
   },
   "tabBar": {
     "color": "#999",

@@ -5,7 +5,7 @@
       <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">待办清单</a>
     </div>
     <!-- 学习笔记 -->
-    <div v-for="item in note" v-if="btn_choose">
+    <div v-for="item in note" :key="item" v-if="btn_choose">
       <article class="note">
         <h3>{{item.title}}</h3>
         <p>{{item.content}}</p>
