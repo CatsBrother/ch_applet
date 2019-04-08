@@ -60,10 +60,12 @@ export default {
       console.log('clickHandle:', ev)
       // throw {message: 'custom test'}
     },
-    bindView () {
-      console.log('1111111111')
+    bindView (e) {
+      let t = e.currentTarget.dataset.eventid
+      let idx = t.split('_')[1]
+      console.log(idx)
       wx.navigateTo({
-        url: '../index/article/main'
+        url: '../article/main?idx=' + idx
       })
     }
   },

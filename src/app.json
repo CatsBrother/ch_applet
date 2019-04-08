@@ -3,7 +3,7 @@
     "pages/index/main",
     "pages/study/main",
     "pages/personal/main",
-    "pages/index/article/main"
+    "pages/article/main"
   ],
   "window": {
     "backgroundTextStyle": "light",
