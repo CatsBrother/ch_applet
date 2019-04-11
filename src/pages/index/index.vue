@@ -34,15 +34,19 @@ export default {
       cardTeam: [{
         'viewid': '1',
         'imgsrc': '../../../static/images/article/title1.jpg',
-        'name': '一个40岁老码农的总结，奋斗'
+        'name': '测绘无人机的应用前景'
       }, {
         'viewid': '2',
         'imgsrc': '../../../static/images/article/title2.jpg',
-        'name': '小公司打杂三年，意外拿到美'
+        'name': '摄影测量到底是一个什么样的专业'
       }, {
         'viewid': '3',
         'imgsrc': '../../../static/images/article/title3.jpg',
-        'name': '作为一个有追求的前端程序媛'
+        'name': '北斗导航系统有多厉害'
+      }, {
+        'viewid': '4',
+        'imgsrc': '../../../static/images/article/title4.jpg',
+        'name': '为什么看地图总觉得美国面积比中国大很多'
       }]
     }
   },
