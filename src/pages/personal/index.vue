@@ -10,7 +10,7 @@
       </div>
     </div>
     <!-- 签到 -->
-    <div class="sign" @click="getLocation">
+    <div class="sign" @click="turnToSign">
       <button>签到</button>
     </div>
   </div>
@@ -30,16 +30,10 @@ export default {
       console.log(e.mp.detail.userInfo)
       this.userInfo = e.mp.detail.userInfo
     },
-    getLocation () {
-      wx.getLocation({
-        type: 'wgs84',
-        success (res) {
-          // const latitude = res.latitude
-          // const longitude = res.longitude
-          // const speed = res.speed
-          // const accuracy = res.accuracy
-          console.log(res)
-        }
+    turnToSign () {
+      const url = '../map/main'
+      wx.navigateTo({
+        url
       })
     }
   },

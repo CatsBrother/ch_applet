@@ -33,19 +33,19 @@ export default {
       nav: ['课程', '资料', '习题'],
       cardTeam: [{
         'viewid': '1',
-        'imgsrc': '../../../static/images/article/title1.jpg',
+        'imgsrc': '/static/images/article/title1.jpg',
         'name': '测绘无人机的应用前景'
       }, {
         'viewid': '2',
-        'imgsrc': '../../../static/images/article/title2.jpg',
+        'imgsrc': '/static/images/article/title2.jpg',
         'name': '摄影测量到底是一个什么样的专业'
       }, {
         'viewid': '3',
-        'imgsrc': '../../../static/images/article/title3.jpg',
+        'imgsrc': '/static/images/article/title3.jpg',
         'name': '北斗导航系统有多厉害'
       }, {
         'viewid': '4',
-        'imgsrc': '../../../static/images/article/title4.jpg',
+        'imgsrc': '/static/images/article/title4.jpg',
         'name': '为什么看地图总觉得美国面积比中国大很多'
       }]
     }
