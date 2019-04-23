@@ -15,12 +15,16 @@
       <p class="nowsite">{{nowsite}}</p>
     </div>
     <button @click="sign">确认签到</button>
+    <!-- <div>
+      <p>签到成功</p>
+      <p>签到失败，请在指定位置签到</p>
+    </div> -->
   </div>
 </template>
 
 <script>
-import QQMapWX from '../../../static/qqmap-wx-jssdk.js';
 
+import QQMapWX from '../../../static/qqmap-wx-jssdk.js';
 export default {
   data () {
     return {
@@ -45,7 +49,7 @@ export default {
         fillColor: '#aaa',
         radius: 3000
       }],
-      nowsite: ''   // 当前位置
+      nowsite: '',   // 当前位置
     }
   },
 
@@ -70,10 +74,15 @@ export default {
       })
     },
     sign () {
+      let aim_distance = 30000
       let lat = wx.getStorageSync('latitude');
       let lng = wx.getStorageSync('longitude');
-      if(Math.sqrt(Math.pow(lat - this.aim_latitude,2)+Math.pow(lng - this.aim_longitude,2)) > 30){
-        console.log('成功');
+      let distance = 100000 * Math.sqrt(Math.pow(lat - this.aim_latitude,2)+Math.pow(lng - this.aim_longitude,2));
+      console.log('目标点距离',distance);
+      if(distance < aim_distance){
+        console.log('签到成功');
+      }else if(distance >= aim_distance){
+        console.log('签到失败');
       }
     }
   },
