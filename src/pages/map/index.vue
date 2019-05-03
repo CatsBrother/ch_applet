@@ -10,15 +10,14 @@
       style="width: 100%; height: 800rpx;">
     </map>
     <div class="site">
-      <img src="../../../static/images/定位.png" alt="">
+      <img src="../../../static/images/GPS.png" alt="">
       <p class="now">当前位置：</p>
       <p class="nowsite">{{nowsite}}</p>
     </div>
-    <button @click="sign">确认签到</button>
-    <!-- <div>
-      <p>签到成功</p>
-      <p>签到失败，请在指定位置签到</p>
-    </div> -->
+    <div class="ans">
+      <button @click="sign" v-if="!msg">确认签到</button>
+      <p v-if="msg">{{msg}}</p>
+    </div>
   </div>
 </template>
 
@@ -35,7 +34,7 @@ export default {
       latitude: '',
       longitude: '',
       markers: [{
-        iconPath: '../../../static/images/定位.png',
+        iconPath: '../../../static/images/GPS.png',
         id: 0,
         latitude: 32.113950,
         longitude: 118.92920,
@@ -50,6 +49,7 @@ export default {
         radius: 3000
       }],
       nowsite: '',   // 当前位置
+      msg:''
     }
   },
 
@@ -74,15 +74,17 @@ export default {
       })
     },
     sign () {
-      let aim_distance = 30000
+      let aim_distance = 1000
       let lat = wx.getStorageSync('latitude');
       let lng = wx.getStorageSync('longitude');
       let distance = 100000 * Math.sqrt(Math.pow(lat - this.aim_latitude,2)+Math.pow(lng - this.aim_longitude,2));
       console.log('目标点距离',distance);
       if(distance < aim_distance){
         console.log('签到成功');
+        this.msg = '签到成功';
       }else if(distance >= aim_distance){
         console.log('签到失败');
+        this.msg = '签到失败';
       }
     }
   },
@@ -105,11 +107,15 @@ export default {
 }
 </script>
 <style>
+  html{
+    background-color: #f7f7f7;
+  }
   .site{
     margin: 20rpx;
     border: solid 1px #bdbdbd;
     border-radius: 20rpx;
     position: relative;
+    background-color: #fff;
   }
   .site img{
     width: 80rpx;
@@ -124,5 +130,17 @@ export default {
   .site .nowsite{
     padding: 0 40rpx 40rpx 20rpx;
   }
-
+  .ans{
+    border: 1rpx solid #dbdbdb;
+    margin: 20rpx;
+    padding: 20rpx;
+    background-color: #fff;
+    border-radius: 20rpx;
+  }
+  .ans button{
+    background-color: #fff;
+  }
+  .ans button::after{
+    border: none; 
+  }
 </style>

@@ -9,9 +9,13 @@
     </swiper>
     <!-- 导航栏 -->
     <nav>
-      <ul>
+      <!-- <ul>
         <li v-for="item in nav" :key='item'>{{item}}</li>
-      </ul>
+      </ul> -->
+      <div v-for="item in nav" :key='item'>
+        <img :src="item.imgsrc" alt="理论">
+        <p>{{item.name}}</p>
+      </div>
     </nav>
     <!-- 个人小程序直接打开微信公众号链接 -->
     <div class="container">
@@ -30,7 +34,17 @@
 export default {
   data () {
     return {
-      nav: ['课程', '资料', '习题'],
+      // nav: ['课程', '资料', '习题'],
+      nav: [{
+        'name':'理论学习',
+        'imgsrc':'/static/images/box_theory.png'
+      }, {
+        'name':'课外实践',
+        'imgsrc':'/static/images/box_practice.png'
+      }, {
+        'name':'个人中心',
+        'imgsrc':'/static/images/box_self.png'
+      }],
       cardTeam: [{
         'viewid': '1',
         'imgsrc': '/static/images/article/title1.jpg',
@@ -93,18 +107,22 @@ export default {
   }
 
   /* 导航栏 */
-  nav ul li{
-    width: 33.3%;
-    height: 80rpx;
-    border: 2rpx solid @border;
-    text-align: center;
-    line-height: 78rpx;
-    color: @text-dark;
-    background-color: #EFF7FF;
-  }
-  nav ul{
+  nav{
     display: flex;
+    justify-content: space-around;
+    margin: 30rpx 0 0 0;
   }
+  nav div img{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 20rpx;
+    background-color: #fff;
+  }
+  nav div p{
+    text-align: center;
+    font-size: 30rpx;
+  }
+  
   // 文章样式
   .container{
     padding: 20rpx 20rpx;

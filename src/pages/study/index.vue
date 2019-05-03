@@ -1,11 +1,12 @@
 <template>
   <div>
     <div class="tag">
-      <a href="#" v-bind:class="btn_choose?'bg_black':'bg_white'">学习笔记</a>
-      <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">待办清单</a>
+      <a href="#" v-bind:class="btn_choose?'bg_black':'bg_white'">网络公开课</a>
+      <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">学习笔记</a>
     </div>
+    <txv-video vid="e0354z3cqjp" playerid="txv1"></txv-video>
     <!-- 学习笔记 -->
-    <div v-for="item in note" :key="item" v-if="btn_choose">
+    <div v-for="item in note" :key="item">
       <article class="note">
         <h3>{{item.title}}</h3>
         <p>{{item.content}}</p>
@@ -16,13 +17,13 @@
         </div>
       </article>
     </div>
-    <!-- 待办清单 -->
-    <div v-if="!btn_choose">
+    <!-- 资料获取
+    <div>
       <form class="task">
         <input type="text" placeholder="创建任务" class="text-task">        
         <button class="submit-task"></button>
       </form>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -51,8 +52,6 @@ export default {
           date: '2019-02-07'
         }
       ],
-      // 默认选择学习笔记
-      btn_choose: false
     }
   },
 
