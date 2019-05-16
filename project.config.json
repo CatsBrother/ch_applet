@@ -6,14 +6,14 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
-		"autoAudits": false,
-		"nodeModules": true
+		"nodeModules": true,
+		"autoAudits": false
 	},
 	"miniprogramRoot": "dist/wx/",
 	"compileType": "miniprogram",
 	"appid": "wx35f4fc26d3ab5fdc",
 	"projectname": "ch_applet",
-	"libVersion": "2.6.0",
+	"libVersion": "2.6.5",
 	"condition": {
 		"search": {
 			"current": -1,

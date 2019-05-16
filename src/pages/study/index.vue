@@ -28,19 +28,11 @@
       </article>
     </div>
     
-    <!-- 资料获取
-    <div>
-      <form class="task">
-        <input type="text" placeholder="创建任务" class="text-task">        
-        <button class="submit-task"></button>
-      </form>
-    </div> -->
   </div>
 </template>
 
 <script>
 // import { formatTime } from '@/utils/index'
-
 export default {
 
   data () {
