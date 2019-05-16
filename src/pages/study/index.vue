@@ -4,9 +4,13 @@
       <a href="#" v-bind:class="btn_choose?'bg_black':'bg_white'">网络公开课</a>
       <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">学习笔记</a>
     </div>
-    <txv-video vid="e0354z3cqjp" playerid="txv1"></txv-video>
+    <!-- 视频课 -->
+    <div v-show="btn_choose">
+      <p>腾讯视频</p>
+      <txv-video vid="q08309nsxfg" playerid="txv1"></txv-video>
+    </div>
     <!-- 学习笔记 -->
-    <div v-for="item in note" :key="item">
+    <div v-for="item in note" :key="item" v-show="!btn_choose">
       <article class="note">
         <h3>{{item.title}}</h3>
         <p>{{item.content}}</p>
@@ -17,19 +21,11 @@
         </div>
       </article>
     </div>
-    <!-- 资料获取
-    <div>
-      <form class="task">
-        <input type="text" placeholder="创建任务" class="text-task">        
-        <button class="submit-task"></button>
-      </form>
-    </div> -->
   </div>
 </template>
 
 <script>
 // import { formatTime } from '@/utils/index'
-
 export default {
 
   data () {
@@ -52,6 +48,7 @@ export default {
           date: '2019-02-07'
         }
       ],
+      btn_choose: true
     }
   },
 
@@ -165,4 +162,11 @@ export default {
     background-position: center;
     background-color: #fff;
   }
+
+  // txv-video{
+  //   width: 300rpx;
+  //   height: 300rpx;
+  //   display: block;
+  //   z-index: 1000;
+  // }
 </style>
