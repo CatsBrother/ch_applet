@@ -1,12 +1,22 @@
 <template>
   <div>
     <div class="tag">
-      <a href="#" v-bind:class="btn_choose?'bg_black':'bg_white'">网络公开课</a>
-      <a href="#" v-bind:class="btn_choose?'bg_white':'bg_black'">学习笔记</a>
+      <div @click="chooseTab" v-bind:class="btn_choose?'bg_black':'bg_white'">网络公开课</div>
+      <div @click="chooseTab" v-bind:class="btn_choose?'bg_white':'bg_black'">学习笔记</div>
     </div>
-    <txv-video vid="e0354z3cqjp" playerid="txv1"></txv-video>
+    <!-- 公开课视频 -->
+    <div class="lesson" v-for="lesson in lessons" :key="lesson" v-show="btn_choose">
+      <div class="module">
+        <div class="title">
+          <img src="../../../static/images/video.png"/>
+          <p>{{lesson.title}}</p>
+        </div>
+        <txv-video :vid="lesson.vid" :playerid="lesson.playerid" :autoplay="false"></txv-video>
+        <p class="introduce">{{lesson.introduce}}</p>
+      </div>
+    </div>
     <!-- 学习笔记 -->
-    <div v-for="item in note" :key="item">
+    <div v-for="item in note" :key="item" v-show="!btn_choose">
       <article class="note">
         <h3>{{item.title}}</h3>
         <p>{{item.content}}</p>
@@ -17,6 +27,7 @@
         </div>
       </article>
     </div>
+    
     <!-- 资料获取
     <div>
       <form class="task">
@@ -34,6 +45,24 @@ export default {
 
   data () {
     return {
+      lessons:[
+        {
+          title: '经天纬地绘山河',
+          vid: 'q08309nsxfg',
+          playerid: 'txv1',
+          introduce: '我们眼中的测绘人是什么样的呢？他们经天纬地绘山河'
+        },{
+          title: '最美测绘人',
+          vid: 'n0831vjj3qv',
+          playerid: 'txv2',
+          introduce: '远看是是破烂的，近看要饭的，拿出工作证一看，是搞测绘的'
+        },{
+          title: '测绘专业视频简介',
+          vid: 'g0668nhckg5',
+          playerid: 'txv3',
+          introduce: '什么是测绘工程，主要工作是什么？研究内容有什么？'
+        }
+      ],
       note: [
         {
           title: '单相空间后方交会',
@@ -52,10 +81,13 @@ export default {
           date: '2019-02-07'
         }
       ],
+      btn_choose: true
     }
   },
-
-  created () {
+  methods: {
+    chooseTab () {
+      this.btn_choose = !this.btn_choose;
+    }
   }
 }
 </script>
@@ -84,7 +116,7 @@ export default {
     border-radius: 10rpx;
     overflow: hidden;
   }
-  .tag a{
+  .tag div{
     width: 250rpx;
     display: inline-block;
     line-height: 58rpx;
@@ -164,5 +196,32 @@ export default {
     background-repeat:no-repeat;
     background-position: center;
     background-color: #fff;
+  }
+  .lesson{
+    margin: 20rpx
+  }
+  .module{
+    background-color: #fff;
+    padding: 0 20rpx 20rpx 20rpx;
+    margin-bottom: 20rpx;
+    border-radius: 20rpx;
+  }
+  .module .title{
+    padding: 20rpx 0;
+    display: flex;
+  }
+  .module .title p{
+    display: inline-block;
+    color: @text-dark;
+    line-height: 50rpx;
+  }
+  .module .introduce{
+    color: @text-middle;
+    font-size: 32rpx;
+  }
+  .module img{
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 20rpx;
   }
 </style>

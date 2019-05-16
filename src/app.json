@@ -57,5 +57,11 @@
       "activeIcon": "static/tabs/user-active.png"
     }],
     "position": "bottom"
+  },
+  "plugins": {
+    "tencentvideo": {
+      "version": "1.3.0",
+      "provider": "wxa75efa648b60994b"
+    }
   }
 }
