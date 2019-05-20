@@ -32,7 +32,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -51,6 +51,13 @@
 					"id": -1,
 					"name": "签到",
 					"pathName": "pages/map/main",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "成绩评定",
+					"pathName": "pages/grade/main",
 					"scene": null
 				}
 			]

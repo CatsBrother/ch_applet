@@ -4,7 +4,8 @@
     "pages/study/main",
     "pages/personal/main",
     "pages/article/main",
-    "pages/map/main"
+    "pages/map/main",
+    "pages/grade/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

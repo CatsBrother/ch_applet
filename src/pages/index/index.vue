@@ -34,15 +34,14 @@
 export default {
   data () {
     return {
-      // nav: ['课程', '资料', '习题'],
       nav: [{
-        'name':'理论学习',
+        'name':'下载中心',
         'imgsrc':'/static/images/box_theory.png'
       }, {
         'name':'课外实践',
         'imgsrc':'/static/images/box_practice.png'
       }, {
-        'name':'个人中心',
+        'name':'成绩评定',
         'imgsrc':'/static/images/box_self.png'
       }],
       cardTeam: [{
