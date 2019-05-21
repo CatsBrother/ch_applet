@@ -12,7 +12,7 @@
     <!-- 签到 成绩评定 -->
     <div class="btn">
       <button @click="turnToSign">签到</button>
-      <button>成绩评定</button>
+      <button @click="turnToGrade">成绩评定</button>
       <button>课表</button>
     </div>
     <!-- 通知栏 -->
@@ -92,6 +92,12 @@ export default {
     },
     turnToSign () {
       const url = '../map/main'
+      wx.navigateTo({
+        url
+      })
+    },
+    turnToGrade () {
+      const url = '../grade/main'
       wx.navigateTo({
         url
       })
