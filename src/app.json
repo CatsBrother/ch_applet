@@ -5,7 +5,8 @@
     "pages/personal/main",
     "pages/article/main",
     "pages/map/main",
-    "pages/grade/main"
+    "pages/grade/main",
+    "pages/download/main"
   ],
   "window": {
     "backgroundTextStyle": "light",

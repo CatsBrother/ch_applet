@@ -9,10 +9,7 @@
     </swiper>
     <!-- 导航栏 -->
     <nav>
-      <!-- <ul>
-        <li v-for="item in nav" :key='item'>{{item}}</li>
-      </ul> -->
-      <div v-for="item in nav" :key='item'>
+      <div v-for="item in nav" :key='item' @click="navView">
         <img :src="item.imgsrc" alt="理论">
         <p>{{item.name}}</p>
       </div>
@@ -84,6 +81,27 @@ export default {
       wx.navigateTo({
         url: '../article/main?idx=' + idx
       })
+    },
+    navView (e) {
+      let t = e.currentTarget.dataset.eventid;
+      let idx = parseInt(t.split('_')[1]);
+      switch (idx){
+        case 0:
+          wx.navigateTo({
+            url: '../download/main'
+          })
+          break;
+        case 1:
+          wx.navigateTo({
+            url: '../download/main'
+          })
+          break;
+        case 2:
+          wx.navigateTo({
+            url: '../grade/main'
+          })
+          break;
+      }
     }
   },
   created () {
