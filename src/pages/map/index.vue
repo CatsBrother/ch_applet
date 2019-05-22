@@ -65,7 +65,7 @@ export default {
           longitude: lng
         },
         success (res) {
-          console.log('success', res.result.address);
+          console.log('success', res.result);
           that.nowsite =  res.result.address;
         },
         fail (res) {
@@ -74,7 +74,7 @@ export default {
       })
     },
     sign () {
-      let aim_distance = 1000
+      let aim_distance = 30
       let lat = wx.getStorageSync('latitude');
       let lng = wx.getStorageSync('longitude');
       let distance = 100000 * Math.sqrt(Math.pow(lat - this.aim_latitude,2)+Math.pow(lng - this.aim_longitude,2));
